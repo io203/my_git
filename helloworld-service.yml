@@ -1,4 +1,5 @@
-server:
-	port: ${PORT:8000}
-#message = Hello World!
-message: Hello Lotte dot com!
+ioproject:
+  profile : dev
+  greeting:
+    say: Hello  DEV word *****edit 333
+
