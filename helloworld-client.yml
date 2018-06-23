@@ -17,7 +17,7 @@ zuul:
 
 #route 규칙은 zuul.routes.스프링애플리케이션이름=path
   routes:
-    helloworld-service: /hello/**
+    helloworld-service: /myhello/**
     discovery-service: /eureka/**
 
 ribbon:
