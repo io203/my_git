@@ -1,25 +1,25 @@
 server:
-	port: ${PORT:9999}
+  port: ${PORT:9999}
 info:
-	component: "Zuul Proxy"
+  component: "Zuul Proxy"
 
 endpoints:
-	restart:
-		enabled: true
-	shutdown:
-		enabled=true
-	health:
-		sensitive=false
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
 
 zuul:
-	ignored-services: '*'
-	ignoredPatterns: /**/api/**
+  ignored-services: '*'
+  ignoredPatterns: /**/api/**
 
 #route 규칙은 zuul.routes.스프링애플리케이션이름=path
-	routes:
-		helloworld-service: /hello/**
-		discovery-service: /eureka/**
+  routes:
+    helloworld-service: /hello/**
+    discovery-service: /eureka/**
 
 ribbon:
-	ConnectTimeout: 3000
-	ReadTimeout: 60000
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
