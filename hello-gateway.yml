@@ -1,9 +1,7 @@
 server:
   port: ${PORT:9999}
 
-spring:
-  application:
-    name: gateway
+
 info:
   component: "Zuul Proxy"
 
@@ -29,8 +27,3 @@ ribbon:
   ReadTimeout: 60000
 
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: *
