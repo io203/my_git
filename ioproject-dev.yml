@@ -1,0 +1,5 @@
+ioproject:
+  profile : dev
+  greeting:
+    say: Hello  DEV word
+

@@ -1,0 +1,5 @@
+ioproject:
+  profile : test
+  greeting:
+    say: Hello TEST  word
+
