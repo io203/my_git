@@ -1,5 +1,4 @@
-ioproject:
-  profile : dev
-  greeting:
-    say: Hello  DEV word *****edit 333
+server:
+	port: ${PORT:8000}
 
+message: Hello Lotte dot com
