@@ -1,0 +1,59 @@
+server:
+  port: 8088
+
+spring:
+   profiles: dev
+  application:
+    name: cloud-board-fo
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:1234@localhost:8761/eureka
+    fetchRegistry: true
+
+
+
+logging:
+  level:
+    reactor:
+      ipc:
+        netty:
+          channel:
+            ContextHandler: info
+        http:
+          client:
+            HttpClient: info
+
+---
+
+server:
+  port: 8089
+
+spring:
+   profiles: tst
+  application:
+    name: cloud-board-fo
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:1234@localhost:8761/eureka
+    fetchRegistry: true
+
+
+
+logging:
+  level:
+    reactor:
+      ipc:
+        netty:
+          channel:
+            ContextHandler: info
+        http:
+          client:
+            HttpClient: info
