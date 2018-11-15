@@ -1,0 +1,56 @@
+
+
+server:
+  port: 8005
+
+spring:
+  profiles: dev
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blackstar?autoReconnect=true&useUnicode=true&characterEncoding=utf8
+    username: blackstar
+    password: 1234
+    maxIdle: 20
+    maxActive: 400
+    maxWait: 10000
+    validationQuery: SELECT 1
+
+
+mybatis:
+  config-location: classpath:mapper/mybatis-config.xml
+  mapper-locations: classpath:mapper/board*.xml
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:1234@localhost:8761/eureka
+
+---
+
+
+  server:
+    port: 8006
+
+  spring:
+    profiles: tst
+    datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/blackstar?autoReconnect=true&useUnicode=true&characterEncoding=utf8
+      username: blackstar
+      password: 1234
+      maxIdle: 20
+      maxActive: 400
+      maxWait: 10000
+      validationQuery: SELECT 1
+
+
+  mybatis:
+    config-location: classpath:mapper/mybatis-config.xml
+    mapper-locations: classpath:mapper/board*.xml
+
+
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://admin:1234@localhost:8761/eureka
