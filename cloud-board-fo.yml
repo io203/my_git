@@ -2,9 +2,8 @@ server:
   port: 8088
 
 spring:
-   profiles: dev
-  application:
-    name: cloud-board-fo
+  profiles: dev
+
 
 
 
@@ -33,9 +32,8 @@ server:
   port: 8089
 
 spring:
-   profiles: tst
-  application:
-    name: cloud-board-fo
+  profiles: tst
+
 
 
 
