@@ -1,0 +1,49 @@
+server:
+  port: ${PORT:9999}
+
+spring:
+  profiles: dev
+
+info:
+  component: "Zuul Proxy"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:1234@localhost:8761/eureka
+
+zuul:
+  routes:
+
+    boardApi:
+      path: /board-api/**
+      service-id: cloud-board-api
+    discovery-service: /eureka/**
+
+
+---
+
+server:
+  port: ${PORT:9999}
+
+spring:
+  profiles: tst
+
+info:
+  component: "Zuul Proxy"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:1234@localhost:8761/eureka
+
+zuul:
+  routes:
+
+    boardApi:
+      path: /board-api/**
+      service-id: cloud-board-api
+    discovery-service: /eureka/**
+
+
+ 
