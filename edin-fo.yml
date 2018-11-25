@@ -1,0 +1,116 @@
+#############
+### 공통
+##############
+# embeded tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+
+
+spring:
+  profiles:
+    active: local
+  # APPLICATION SETTINGS (SpringApplication)
+  main:
+    show-banner: true
+  # favicon
+  mvc.favicon.enabled: false
+  # HTTP encoding (HttpEncodingProperties)
+  http:
+    encoding:
+      charset: UTF-8 # the encoding of HTTP requests/responses
+      enabled: true # enable http encoding support
+      force: true # force the configured encoding
+
+
+
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+logging:
+  config: classpath:logback-spring.xml
+
+---
+
+##############
+### local
+##############
+
+
+# embeded tomcat
+server:
+  port: 8088
+
+spring:
+  profiles: local
+
+  thymeleaf:
+    cache: false
+
+
+
+feign:
+  hystrix:
+    enabled: true
+
+  client:
+    config:
+      default:
+        #Hystrix를 사용하는 경우 기본적으로 thread time out이 1초 때문에 기본 설정으로는 feign의 connection,
+        #read timeout이 1초 이상인 경우라도 1초 안에 응답이 오지 않으면 fallback이 실행된다
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:1234@localhost:8761/eureka
+
+
+logging:
+  level:
+    com.mycom.edin: DEBUG
+
+---
+
+##############
+### dev
+##############
+
+
+# embeded tomcat
+server:
+  port: 8088
+
+spring:
+  profiles: dev
+
+  thymeleaf:
+    cache: false
+
+
+
+feign:
+  hystrix:
+    enabled: true
+
+  client:
+    config:
+      default:
+        #Hystrix를 사용하는 경우 기본적으로 thread time out이 1초 때문에 기본 설정으로는 feign의 connection,
+        #read timeout이 1초 이상인 경우라도 1초 안에 응답이 오지 않으면 fallback이 실행된다
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:1234@localhost:8761/eureka
+
+
+logging:
+  level:
+    com.mycom.edin: DEBUG
