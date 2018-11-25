@@ -1,3 +1,44 @@
+#############
+### 공통
+##############
+spring:
+  profiles:
+    active: local
+---
+#############
+### local
+##############
+server:
+  port: ${PORT:9999}
+
+spring:
+  profiles: local
+
+info:
+  component: "Zuul Proxy"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:1234@localhost:8761/eureka
+
+zuul:
+  routes:
+
+    boardApi:
+      path: /board-api/**
+      service-id: cloud-board-api
+    edinApi:
+      path: /edin-api/**
+      service-id: edin-api
+    discovery-service: /eureka/**
+
+
+
+---
+#############
+### dev
+##############
 server:
   port: ${PORT:9999}
 
