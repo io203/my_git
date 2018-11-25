@@ -18,6 +18,9 @@ zuul:
     boardApi:
       path: /board-api/**
       service-id: cloud-board-api
+    edinApi:
+      path: /edin-api/**
+      service-id: edin-api
     discovery-service: /eureka/**
 
 
