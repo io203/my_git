@@ -1,0 +1,11 @@
+server:
+  port: 9001
+
+spring:
+  profiles: dev
+
+
+
+
+message:
+  value: "this is dev profile===1111"
