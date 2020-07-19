@@ -10,6 +10,6 @@ spring:
     password: 1234
 
 message:
-  value: "this is dev profile===update messaging 222222"
+  value: "this is dev profile===update3  messaging 3030303030303"
 
 
