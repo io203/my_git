@@ -3,6 +3,14 @@ server:
 
 spring:
   profiles: dev
+  
+  rabbitmq: 
+    host: localhost
+    port: 5672
+    username: admin
+    password: 1234
 
 message:
   value: "this is dev profile===update messaging 222222"
+
+
