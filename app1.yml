@@ -1,0 +1,33 @@
+server:
+  port: 8060
+
+spring:
+  profiles: dev
+
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+
+message:
+  value: "this is dev profile"
+
+---
+
+server:
+  port: 8063
+
+spring:
+  profiles: test
+
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+
+message:
+  value: "this is dev profile"
