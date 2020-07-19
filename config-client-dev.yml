@@ -4,8 +4,5 @@ server:
 spring:
   profiles: dev
 
-
-
-
 message:
-  value: "this is dev profile===1111"
+  value: "this is dev profile===update messaging 222222"
